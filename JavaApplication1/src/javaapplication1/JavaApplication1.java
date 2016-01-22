@@ -5,6 +5,8 @@
  */
 package javaapplication1;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author T-101
@@ -17,6 +19,14 @@ public class JavaApplication1 {
     public static void main(String[] args) {
         // TODO code application logic here
         System.out.println("dame mi punto");
+        /*
+        Ejercicio No. 1 crear una ventana y personalizar el titulo con 
+        un constructor 
+        */
+    JFrame ventana=new JFrame("hola mundo");
+    ventana.setSize(350, 350);
+    ventana.setVisible(true);
+    
     }
     
 }

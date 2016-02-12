@@ -39,9 +39,12 @@ public class Cliente {
     public int getEdad() {
         return edad;
     }
-    public void seEdad(int edad){
-        ValidarEdad Validar=new Validaredad();
+    public void setEdad(int edad) throws ValorNoNegativoException, MenorDeEdadException {
+   
+        ValidarEdad.checarEdadNegativa(edad);
+        ValidarEdad.checarMenorEdad( edad);
         
+        this.edad=edad;
     }
     
 }

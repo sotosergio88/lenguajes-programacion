@@ -5,16 +5,21 @@
  */
 package capitulo8.InputOutput;
 
-import java.net.*;
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
-
-
-
-public class MiPrimerConexion {
-    public static void main(String[] args) throws Exception{
-        //primero vamos a usar una clase que se llama URL
-      URL url=new URL("http://www.weatherlink.com/user/sierraguadalupe/index.php?view=summary&headers=0");
+/**
+ *
+ * @author Sergio
+ */
+public class ServicioLeerEstacion {
+    public static String generarValor (String etiqueta)throws Exception{
+        
+        String valor="sin valor";
+        URL url=new URL("http://www.weatherlink.com/user/sierraguadalupe/index.php?view=summary&headers=0");
         //ahora tipo de conexion
         HttpURLConnection con=(HttpURLConnection) url.openConnection();
         //obtiene los datos
@@ -34,19 +39,21 @@ public class MiPrimerConexion {
                  int indice= lineaActual.indexOf(">");
                  int indice2= lineaActual.indexOf("</");
                  String tempActual=lineaActual.substring(indice+1, indice2);
+                 valor=tempActual;
                  System.out.println(tempActual); 
                  miLinea++;
              }           
-             if(lineaActual.contains("Outside Temp"))
+             if(lineaActual.contains(etiqueta))
                 encontrado=true;
                 
                 //System.out.println("Dato encontrado!!!");
                 
          }  
-     
+    return valor;
     }
+    
 }
 
-            
+
     
 

@@ -39,7 +39,7 @@ public class MiPrimerConexion {
              }           
              if(lineaActual.contains("Outside Temp"))
                 encontrado=true;
-                
+              
                 //System.out.println("Dato encontrado!!!");
                 
          }  

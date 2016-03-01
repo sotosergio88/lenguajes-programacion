@@ -13,9 +13,25 @@ public class Cliente {
     
     private String nombre;
     private String aPaterno;
+
+    public Cliente(String nombre, String aPaterno, int edad, float sueldo, Direccion direccion) {
+        this.nombre = nombre;
+        this.aPaterno = aPaterno;
+        this.edad = edad;
+        this.sueldo = sueldo;
+        this.direccion = direccion;
+    }
     private int edad;
     private float sueldo;
     private Direccion direccion;
+
+    Cliente() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    Cliente(String ana, String lopez, int i, int i0, String sur_10, int i1, String ecatepec) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     public String getNombre() {
         return nombre;
     }

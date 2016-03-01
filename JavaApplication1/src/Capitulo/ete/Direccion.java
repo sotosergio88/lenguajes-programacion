@@ -13,7 +13,17 @@ public class Direccion {
     private String calle;
     private int numero;
     private String municipio;
-    private String telefono;
+    String telefono;
+
+    public Direccion(String calle, int numero, String municipio) {
+        this.calle = calle;
+        this.numero = numero;
+        this.municipio = municipio;
+    }
+    
+    
+    
+    
     public String getCalle() {
         return calle;
     }
@@ -36,14 +46,6 @@ public class Direccion {
 
     public void setMunicipio(String municipio) {
         this.municipio = municipio;
-    }
-
-    public String getTelefono() {
-        return telefono;
-    }
-
-    public void setTelefono(String telefono) {
-        this.telefono = telefono;
     }
     
     

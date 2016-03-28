@@ -5,28 +5,27 @@
  */
 package Capitulo11.Collections;
 
-import java.util.ArrayList;
 
-/**
- *
- * @author Sergio
- */
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
+
 public class TestBasico extends javax.swing.JFrame {
+    ArrayList<Pregunta> pregutas;
+    JRadioButton radios[]=new JRadioButton[4];
+    int numero=0;
+    
 
     /**
      * Creates new form TestBasico
      */
+    
     public TestBasico() {
+        ArrayList<Pregunta>preguntas=GeneradorPreguntas.obtenerTodasLasPreguntas();
+        Pregunta.setText(preguntas.get(numero).getTitulo());
         initComponents();
-        
-        
-        ArrayList<Pregunta> preguntas=GeneradorPreguntas.obtenerTodasLasPreguntas();
-        pregunta.setText(preguntas.get(0).getTitulo());
-        
-        Radio0.setText(preguntas.get(0).getOpciones().get(0).getTitulo());
-        Radio1.setText(preguntas.get(0).getOpciones().get(1).getTitulo());
-        Radio2.setText(preguntas.get(0).getOpciones().get(2).getTitulo());
-        Radio3.setText(preguntas.get(0).getOpciones().get(3).getTitulo());
+         
     }
 
     /**
@@ -61,6 +60,11 @@ public class TestBasico extends javax.swing.JFrame {
 
         buttonGroup1.add(Radio1);
         Radio1.setText("jRadioButton2");
+        Radio1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Radio1ActionPerformed(evt);
+            }
+        });
 
         buttonGroup1.add(Radio2);
         Radio2.setText("jRadioButton3");
@@ -69,8 +73,18 @@ public class TestBasico extends javax.swing.JFrame {
         Radio3.setText("jRadioButton4");
 
         jButton1.setText("Checar Respuesta");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Ir a Siguiente Pregunta");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -115,7 +129,25 @@ public class TestBasico extends javax.swing.JFrame {
 
     private void Radio0ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio0ActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_Radio0ActionPerformed
+
+    private void Radio1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Radio1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Radio1ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        boolean respuesta=GeneradorPreguntas.checarRespuesta(pregunta.get(numero),radios);
+        JOptionPane.showMessageDialog(rootPane,"Respuesta:"+respuesta);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        // TODO add your handling code here:
+        numero++;
+        iniciarTodas();
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -162,4 +194,20 @@ public class TestBasico extends javax.swing.JFrame {
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel pregunta;
     // End of variables declaration//GEN-END:variables
+public void iniciarTodas(){
+    
+        if(numero< preguntas.size(numero)){
+        radios[0]=Radio0;
+        radios[1]=Radio1;
+        radios[2]=Radio2;
+        radios[3]=Radio3;
+        
+        ArrayList<Pregunta> preguntas=GeneradorPreguntas.obtenerTodasLasPreguntas();
+        
+        Radio0.setText(preguntas.get(numero).getOpciones().get(0).getTitulo());
+        Radio1.setText(preguntas.get(numero).getOpciones().get(1).getTitulo());
+        Radio2.setText(preguntas.get(numero).getOpciones().get(2).getTitulo());
+        Radio3.setText(preguntas.get(numero).getOpciones().get(3).getTitulo());
+        }
+        }
 }

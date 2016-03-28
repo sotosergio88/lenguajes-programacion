@@ -9,6 +9,7 @@ package Capitulo11.Collections;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
+import java.text.*;
 
 
 public class TestBasico extends javax.swing.JFrame {
@@ -196,7 +197,7 @@ public class TestBasico extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 public void iniciarTodas(){
     
-        if(numero< preguntas.size(numero)){
+        if(numero< preguntas.size()){
         radios[0]=Radio0;
         radios[1]=Radio1;
         radios[2]=Radio2;

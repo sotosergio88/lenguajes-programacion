@@ -54,6 +54,7 @@ int numero=0;
         botonEvaluacion = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setAlwaysOnTop(true);
 
         pregunta.setText("Preguntas:");
 

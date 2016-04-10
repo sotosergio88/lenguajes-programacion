@@ -32,26 +32,10 @@ public static ArrayList<Pregunta>obtenerTodasLasPeguntas(){
     //Finalmente al arrayList de preguntas agregamos la pregunta
     preguntas.add(p1);
     
-    
-    
-    
     Opcion o1p2=new Opcion("Tokio",false);
     Opcion o2p2=new Opcion("Beiging",true);
     Opcion o3p2=new Opcion("Seul",false);
     Opcion o4p2=new Opcion("Pyongiang",false);
-    
-    Opcion o1p3=new Opcion("Berna",true);
-    Opcion o2p3=new Opcion("Bélgica",false );
-    Opcion o3p3=new Opcion("Brunei",false);
-    Opcion o4p3=new Opcion("Burundi",false);
-        
-    Opcion op1=new Opcion("Oman",false);
-    Opcion op2=new Opcion("Toronto",false );
-    Opcion op3=new Opcion("Ottawa",true);
-    Opcion op4=new Opcion("Daca",false);
-    
-    
-   
     
     ArrayList<Opcion> opcionesp2=new ArrayList<Opcion>();
     opcionesp2.add(o1p2);
@@ -59,32 +43,41 @@ public static ArrayList<Pregunta>obtenerTodasLasPeguntas(){
     opcionesp2.add(o3p2);
     opcionesp2.add(o4p2);
     
+    Pregunta p2=new Pregunta("Capital de China", opcionesp2);
+    
+    preguntas.add(p2);
+    
+    Opcion o1p3=new Opcion("Berna",true);
+    Opcion o2p3=new Opcion("Bélgica",false );
+    Opcion o3p3=new Opcion("Brunei",false);
+    Opcion o4p3=new Opcion("Burundi",false);
+    
     ArrayList<Opcion> opcionesp3=new ArrayList<Opcion>();
-    opcionesp3.add(op01);
-    opcionesp3.add(op02);
-    opcionesp3.add(op03);
-    opcionesp3.add(op04);
-        
+    opcionesp3.add(o1p3);
+    opcionesp3.add(o2p3);
+    opcionesp3.add(o3p3);
+    opcionesp3.add(o4p3);
+           
+    Opcion o1p4=new Opcion("Oman",false);
+    Opcion o2p4=new Opcion("Toronto",false );
+    Opcion o3p4=new Opcion("Ottawa",true);
+    Opcion o4p4=new Opcion("Daca",false);
+    
+    Pregunta p3=new Pregunta("Cual es la Capital de suiza",opcionesp3);
+    
+    preguntas.add(p3);
+    
     ArrayList<Opcion> opcionesp4=new ArrayList<Opcion>();
-    opcionesp4.add(op1);
-    opcionesp4.add(op2);
-    opcionesp4.add(op3);
-    opcionesp4.add(op4);
+    opcionesp4.add(o1p4);
+    opcionesp4.add(o2p4);
+    opcionesp4.add(o3p4);
+    opcionesp4.add(o4p4);
     
-    
-    
-
-      Pregunta p2=new Pregunta("Capital de China", opcionesp2);
-      Pregunta p3=new Pregunta("Cual es la Capital de suiza",opcionesp3);
-      Pregunta p4=new Pregunta("Cual es la Capital de canada",opcionesp4);
+    Pregunta p4=new Pregunta("Cual es la Capital de canada",opcionesp4);
       
-     
-      preguntas.add(p1);
-      preguntas.add(p2);
-      preguntas.add(p3);
-      preguntas.add(p4);
+    preguntas.add(p4);
           
-      return preguntas;
+    return preguntas;
       
     }
 /**

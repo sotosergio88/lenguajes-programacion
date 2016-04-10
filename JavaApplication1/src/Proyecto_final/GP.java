@@ -181,10 +181,10 @@ public class GP {
     Opciones o4p10=new Opciones("Ninguna de las anteriores",false);
     //DEspues generamos un arraylIts de esa opciones y agregamos a dicho arrayList a ellas.
      ArrayList<Opciones> g=new ArrayList<Opciones>();
-    g.add(o1p6);
-    g.add(o2p6);
-    g.add(o3p6);
-    g.add(o4p6); 
+    g.add(o1p10);
+    g.add(o2p10);
+    g.add(o3p10);
+    g.add(o4p10); 
     //Desspues creamos la pregunta y en su cosntructor agregamos el titulo y el arrayList de opciones anterior
    Preguntas p10=new Preguntas("10. ¿Qué es un arraylist?", g);
     
